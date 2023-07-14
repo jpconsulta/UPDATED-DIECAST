@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Restaurant Recommendations</h1>
+<form action="{{ url_for('processing') }}" method="post">
+    <label for="diecast_location">Location of Diecastcars:</label>
+    <select name="diecast_location" id="diecast_location" required>
+        <option disabled selected value>...</option>
+        <option disabled selected value>...</option>
+        <option value="Tomica">Tom</option>
+        <option value="Tomica">Tom</option>
+        <option value="MiniGT">MGT</option>
+        <option value="MiniGT">MGT</option>
+        <option value="HotWheels">Hw</option>
+        <option value="HotWheels">Hw</option>
+        <option value="Matchbox">MB</option>
+        <option value="Matchbox">MB</option>
+        <option value="Welly">W</option>
+        <option value="Welly">W</option>
+    </select><br><br>
+
+    <label for="diecast_name">Manufacturer:</label>
+    <input type="text" name="diecast_manufacturer" id="diecast_manufacturer" 
+    <br>
+    <br>
+    <label for="diecast_carbrand">Carbrand:</label>
+    <input type="text" name="diecast_carbrand" id="diecast_carbrand"> 
+    <br>
+    <br>
+    <label for="diecast_carname">Carname:</label>
+    <input type="text" name="diecast_carname" id="diecast_carname">
+    <br>
+    <br>
+    <label for="diecast_series">Series:</label>
+    <input type="text" name="diecast_series" id="diecast_series">
+    <br>
+    <br>
+    <label for="diecast_releaseyear">Releaseyear:</label>
+    <input type="number" name="diecast_releaseyear" id="diecast_releaseyear">
+    <br>
+    <br>
+    <label for="diecast_color">Color:</label>
+    <input type="text" name="diecast_color" id="diecast_color">
+    <br>
+    <br>
+    <label for="diecast_material">Material:</label>
+    <input type="text" name="diecast_material" id="diecast_material">
+    <br>
+    <br>
+    <label for="diecast_price">Price:</label>
+    <input type="number" name="diecast_price" id="diecast_price">
+    <br>
+    <br>
+    <label for="diecast_url">Image URL:</label>
+    <input type="url" name="diecast_url" id="diecast_url">
+    <br>
+    <textarea name="diecast_description" placeholder="Tell me about toycars..." cols="30" rows="10"></textarea>
+    <br>
+    <input type="submit" value="Register!">
+</form>
+{% endblock %}

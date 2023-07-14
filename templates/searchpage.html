@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="search-results">
+  <h1>Results for "{{ query_template }}"</h1>
+  {% if query_template %}
+    <ul class="search-results">
+
+        <li>
+        <h2>{{ query_template.ID }} - {{ query_template.name }}</h2>
+        <img src="{{ query_template.image }}" alt="{{ query_template.ID }} {{ query_template.name }}">
+        <p>Manufacturer: {{ query_template.manufacturer }}</p>
+        <p>Carbrand: {{ query_template.carbrand }}</p>
+        <p>Carname: {{ query_template.carname }}</p>
+        <p>Series: {{ query_template.series }}</p>
+        <p>Release Year: {{ query_template.releaseyear }}</p>
+        <p>Color: {{ query_template.color }}</p>
+        <p>Material: {{ query_template.material }}</p>
+        <p>Price: {{ query_template.price }}</p>
+        <p>Url: {{ query_template.url }}</p>
+        </li>
+
+    </ul>
+  {% else %}
+    <p>Data not found, sorry and try again.</p>
+  {% endif %}
+</div>
+{% endblock %}

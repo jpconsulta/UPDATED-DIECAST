@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Diecast Cars</h1>
+<form action="{{ url_for('update') }}" method="post">
+    <input type="hidden" name="diecast_id" value="{{ Diecast.id }}">
+    <label for="diecast_location">Restaurant Location</label>
+    <select name="diecast_location" id="diecast_location" required>
+        <option disabled selected value>...</option>
+        <option disabled selected value>...</option>
+        <option value="Tomica">Tom</option>
+        <option value="Tomica">Tom</option>
+        <option value="MiniGT">MGT</option>
+        <option value="MiniGT">MGT</option>
+        <option value="HotWheels">Hw</option>
+        <option value="HotWheels">Hw</option>
+        <option value="Matchbox">MB</option>
+        <option value="Matchbox">MB</option>
+        <option value="Welly">W</option>
+        <option value="Welly">W</option>
+        
+    </select><br><br>
+    <label for="diecast_manufacturer">Manufacturer:</label>
+    <input type="text" name="diecast_manufacturer" id="diecast_manufacturer" value="{{ Diecast.manufacturer }}" required>
+    <br><br>
+    <label for="diecast_carbrand">Carbrand:</label>
+    <input type="text" name="diecast_carbrand" id="diecast_carbrand" value="{{ Diecast.carbrand }}">
+    <br><br>
+    <label for="diecast_carname">Carname:</label>
+    <input type="number" name="diecast_carname" id="diecast_carname" value="{{ Diecast.carname }}">
+    <br><br>
+    <label for="diecast_series">Series:</label>
+    <input type="text" name="diecast_series" id="diecast_series" value="{{ Diecast_series }}">
+    <br><br>
+    <label for="diecast_releaseyear">Releaseyear:</label>
+    <input type="int" name="diecast_releaseyear" id="diecast_releaseyear" value="{{ Diecast.releaseyear }}">
+    <br><br>
+    <label for="diecast_color">Color:</label>
+    <input type="text" name="diecast_color" id="diecast_color" value="{{ Diecast.color }}">
+    <br><br>
+    <label for="diecast_material">Material:</label>
+    <input type="text" name="diecast_material" id="diecast_material" value="{{ Diecast.material }}">
+    <br><br>
+    <label for="diecast_price">Price:</label>
+    <input type="int" name="diecast_price" id="diecast_price" value="{{ Diecast.price }}">
+    <br><br>
+    <label for="diecast_url">Image URL:</label>
+    <input type="url" name="diecast_url" id="diecast_url" value="{{ Diecast.image }}">
+    <br>
+    <input type="submit" value="Update!">
+</form>
+{% endblock %}

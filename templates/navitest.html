@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg bg-warning">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Children's Corner!</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+         <!-- <a class="nav-link active" aria-current="page" href="/about">About</a>-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="../static/product/tomica.jpg" data-image="url_to_tomica_image">Picture of Tomica</a></li>
+              <li><a class="dropdown-item" href="../static/product/gt.jpg" data-image="url_to_mini_gt_image">Picture of MINI GT</a></li>
+              <li><a class="dropdown-item" href="../static/product/hotwheels.jpg" data-image="url_to_hotwheels_image">Picture of Hot Wheels</a></li>
+            </ul>
+          </li>
+          <form class="d-flex" role="search" id="search-form">
+            <input class="form-control me-2" type="text" id="search-input" placeholder="Search...">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Get the search form and input element
+  const searchForm = document.getElementById('search-form');
+  const searchInput = document.getElementById('search-input');
+
+  // Add an event listener for the form submission
+  searchForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    const searchTerm = searchInput.value.toLowerCase(); // Get the search term
+
+    // Get all the paragraphs containing the product details
+    const productParagraphs = document.querySelectorAll('form p');
+
+    // Iterate over each paragraph and hide/show based on the search term
+    productParagraphs.forEach(function (paragraph) {
+      const productText = paragraph.innerText.toLowerCase();
+      const shouldDisplay = productText.includes(searchTerm);
+
+      // Show or hide the paragraph based on the search term
+      paragraph.style.display = shouldDisplay ? 'block' : 'none';
+    });
+  });
+</script>
